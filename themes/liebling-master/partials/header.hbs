@@ -1,0 +1,225 @@
+<!--{{!---->
+<!--This header template is shared across all the pages.-->
+<!----}}-->
+<!--&lt;!&ndash;--->
+<!--<header class="m-header {{#if background}}with-picture{{/if}} js-header"> -->
+<!--  <div class="m-mobile-topbar" data-aos="fade-down">-->
+<!--    <button class="m-icon-button in-mobile-topbar js-open-menu" aria-label="{{t "Open menu"}}">-->
+<!--      <span class="icon-menu" aria-hidden="true"></span>-->
+<!--    </button>-->
+  <!--    {{#if @site.logo}}-->
+<!--      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">-->
+<!--        <img src="{{@site.logo}}" alt="{{@site.title}}">-->
+<!--      </a>-->
+  <!--    {{else}}-->
+<!--      <a href="{{@site.url}}" class="m-site-name in-mobile-topbar">-->
+<!--        {{@site.title}}-->
+<!--      </a>-->
+  <!--    {{/if}}-->
+<!--    <button class="m-icon-button in-mobile-topbar js-open-search" aria-label="{{t "Open search"}}">-->
+<!--      <span class="icon-search" aria-hidden="true"></span>-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  <div class="m-menu js-menu">-->
+<!--    <button class="m-icon-button outlined as-close-menu js-close-menu" aria-label="{{t "Close menu"}}">-->
+<!--      <span class="icon-close"></span>-->
+<!--    </button>-->
+<!--    <div class="m-menu__main" data-aos="fade-down">-->
+<!--      <div class="l-wrapper">-->
+<!--        <div class="m-nav js-main-nav">-->
+<!--          <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="{{t "Main menu"}}">-->
+<!--            <ul>-->
+  <!--              {{#if @site.logo}}-->
+<!--                <li class="only-desktop">-->
+<!--                  <a href="{{@site.url}}" class="m-logo">-->
+<!--                    <img src="{{@site.logo}}" alt="{{@site.title}}">-->
+<!--                  </a>-->
+<!--                </li>-->
+  <!--                {{else}}-->
+<!--                <li class="only-desktop">-->
+<!--                  <a href="{{@site.url}}" class="m-site-name in-desktop-menu">-->
+<!--                    {{@site.title}}-->
+<!--                  </a>-->
+<!--                </li>-->
+  <!--              {{/if}}-->
+  <!--              {{#if @site.navigation}}-->
+<!--                {{navigation}}-->
+  <!--              {{/if}}-->
+  <!--&lt;!&ndash;              {{#if @site.secondary_navigation}}&ndash;&gt;-->
+  <!--&lt;!&ndash;                <li class="more">&ndash;&gt;-->
+  <!--&lt;!&ndash;                  <span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                    <a href="javascript:void(0);" class="js-open-secondary-menu">&ndash;&gt;-->
+  <!--&lt;!&ndash;                      {{t "More"}}&ndash;&gt;-->
+  <!--&lt;!&ndash;                      <span class="icon-chevron-down" aria-hidden="true"></span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                    </a>&ndash;&gt;-->
+  <!--&lt;!&ndash;                  </span>&ndash;&gt;-->
+  <!--&lt;!&ndash;                </li>&ndash;&gt;-->
+  <!--&lt;!&ndash;              {{/if}}&ndash;&gt;-->
+  <!--              <li class="submenu-option js-submenu-option">-->
+  <!--                <button class="m-icon-button in-menu-main more js-toggle-submenu" aria-label="{{t "Open submenu"}}">-->
+  <!--                  <span class="icon-more" aria-hidden="true"></span>-->
+  <!--                </button>-->
+  <!--                <div class="m-submenu js-submenu">-->
+  <!--                  <div class="l-wrapper in-submenu">-->
+  <!--                    <section class="m-recent-articles">-->
+  <!--                      <h3 class="m-submenu-title in-recent-articles">{{t "Recent articles"}}</h3>-->
+  <!--                      {{#get "posts" limit="4" order="published_at desc" as |recent|}}-->
+  <!--                        {{#if recent}}-->
+  <!--                          <div class="glide js-recent-slider">-->
+  <!--                            <div class="glide__track" data-glide-el="track">-->
+  <!--                              <div class="glide__slides">-->
+  <!--                                {{#foreach recent}}-->
+  <!--                                <div class="glide__slide">-->
+  <!--                                  <a href="{{url}}" class="m-recent-article">-->
+  <!--                                    <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">-->
+  <!--                                      {{#if feature_image}}-->
+  <!--                                        <img src="{{img_url feature_image size="s"}}" loading="lazy" alt="">-->
+  <!--                                      {{else}}-->
+  <!--                                        <img src="{{asset "images/no-image.png"}}" loading="lazy" alt="">-->
+  <!--                                      {{/if}}-->
+  <!--                                    </div>-->
+  <!--                                    <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">-->
+  <!--                                      {{title}}-->
+  <!--                                    </h3>-->
+  <!--                                    <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>-->
+  <!--                                  </a>-->
+  <!--                                </div>-->
+  <!--                                {{/foreach}}-->
+  <!--                              </div>-->
+  <!--                            </div>-->
+  <!--                          </div>-->
+  <!--                        {{else}}-->
+  <!--                          <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>-->
+  <!--                        {{/if}}-->
+  <!--                      {{/get}}-->
+  <!--                    </section>-->
+  <!--                    <section class="m-tags">-->
+  <!--                      <h3 class="m-submenu-title">{{t "Tags"}}</h3>-->
+  <!--                      {{#get "tags" limit="10"}}-->
+  <!--                        <ul>-->
+  <!--                          {{#foreach tags}}-->
+  <!--                            <li>-->
+  <!--                              <a href="{{url}}">{{name}}</a>-->
+  <!--                            </li>-->
+  <!--                            {{else}}-->
+  <!--                              <li class="m-not-found">{{t "No tags found :("}}</li>-->
+  <!--                          {{/foreach}}-->
+  <!--                        </ul>-->
+  <!--                      {{/get}}-->
+  <!--                    </section>-->
+  <!--                  </div>-->
+  <!--                </div>-->
+  <!--              </li>-->
+  <!--            </ul>-->
+  <!--          </nav>-->
+  <!--          <div class="m-nav__right">-->
+  <!--            <button class="m-icon-button in-menu-main js-open-search" aria-label="{{t "Open search"}}">-->
+  <!--              <span class="icon-search" aria-hidden="true"></span>-->
+  <!--            </button>-->
+  <!--            <div class="m-toggle-darkmode js-tooltip" data-tippy-content="{{t "Toggle dark mode"}}" tabindex="0">-->
+  <!--              <label for="toggle-darkmode" class="sr-only">-->
+  <!--                {{t "Toggle dark mode"}}-->
+  <!--              </label>-->
+  <!--              <input id="toggle-darkmode" type="checkbox" class="js-toggle-darkmode">-->
+  <!--              <div>-->
+  <!--                <span class="icon-moon moon" aria-hidden="true"></span>-->
+  <!--                <span class="icon-sunny sun" aria-hidden="true"></span>-->
+  <!--              </div>-->
+  <!--            </div>-->
+  <!--          </div>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  {{#if @site.secondary_navigation}}-->
+  <!--    <div id="secondary-navigation-template" style="display: none;">-->
+  <!--      {{navigation type="secondary"}}-->
+  <!--    </div>-->
+  <!--  {{/if}}-->
+  <!--</header>-->
+<div class="page__header">
+    <header class="header">
+      <div class="container">
+        <a class="header__logo" href="/">
+          <svg width="78" height="62" viewBox="0 0 78 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <mask id="mask0_3_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="7" y="52" width="8" height="10">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M7.88203 52.7058H14.5334V61.8287H7.88203V52.7058Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_3_17)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M13.1763 55.9306C13.1763 54.751 12.3673 53.9194 11.225 53.9194C10.0827 53.9194 9.21419 54.751 9.21419 55.9306C9.21419 57.1213 10.0827 57.9416 11.225 57.9416C12.3553 57.9416 13.1763 57.1213 13.1763 55.9306ZM14.5334 55.9304C14.5334 57.8178 13.2602 59.1549 11.511 59.1549C10.4878 59.1549 9.70258 58.6829 9.22657 57.9864V61.8288H7.88203V52.8407H9.22657V53.8967C9.70258 53.1891 10.4878 52.7058 11.5231 52.7058C13.2364 52.7058 14.5334 54.0428 14.5334 55.9304Z" fill="#6496DC"/>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6967 55.9306C20.6967 54.751 19.8281 53.9194 18.6858 53.9194C17.5435 53.9194 16.7346 54.751 16.7346 55.9306C16.7346 57.1213 17.5555 57.9416 18.6858 57.9416C19.8281 57.9416 20.6967 57.1213 20.6967 55.9306ZM22.0288 52.8407V59.02H20.6843V57.9864C20.2083 58.6941 19.4229 59.1549 18.3997 59.1549C16.6507 59.1549 15.3777 57.8178 15.3777 55.9304C15.3777 54.0428 16.6747 52.7058 18.3879 52.7058C19.4229 52.7058 20.2083 53.1891 20.6843 53.8967V52.8407H22.0288Z" fill="#6496DC"/>
+            <mask id="mask1_3_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="22" y="52" width="8" height="10">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M22.8015 52.8407H29.4291V61.8287H22.8015V52.8407Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask1_3_17)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M29.4291 52.8407L25.0979 61.8287H23.6583L25.3835 58.2334L22.8015 52.8407H24.2414L26.0975 56.8628L27.9892 52.8407H29.4291Z" fill="#6496DC"/>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M40.0306 55.054V59.0199H38.6861V55.3236C38.6861 54.4024 38.2934 53.9193 37.3891 53.9193C36.3302 53.9193 35.7828 54.6945 35.7828 55.8179L35.7946 59.0199H34.4381V55.3236C34.4381 54.4024 34.0456 53.9193 33.1413 53.9193C32.0823 53.9193 31.547 54.6945 31.547 55.8179V59.0199H30.2024V52.8407H31.547V53.8293C31.999 53.1216 32.6415 52.7059 33.5816 52.7059C34.581 52.7059 35.283 53.1666 35.6044 53.998C36.0446 53.2002 36.7822 52.7059 37.8174 52.7059C39.1977 52.7059 40.0306 53.5821 40.0306 55.054Z" fill="#6496DC"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M42.4688 55.2455H46.2772C46.0749 54.4026 45.3965 53.8071 44.4086 53.8071C43.3852 53.8071 42.695 54.4139 42.4688 55.2455ZM47.7168 56.2785H42.3982C42.5053 57.4134 43.3502 58.0427 44.4448 58.0427C45.2301 58.0427 45.8846 57.7279 46.1938 57.1211H47.586C47.0743 58.5031 45.825 59.1547 44.4329 59.1547C42.4459 59.1547 41.0299 57.8065 41.0299 55.9415C41.0299 54.0766 42.4338 52.7058 44.409 52.7058C46.5151 52.7058 47.8477 54.2449 47.7168 56.2785Z" fill="#6496DC"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M54.618 55.1214V59.0199H53.2735V55.3798C53.2735 54.4248 52.8333 53.9191 51.8458 53.9191C50.6915 53.9191 50.0728 54.6271 50.0728 55.8179V59.0199H48.7285V52.8407H50.0728V53.8631C50.537 53.144 51.2389 52.7059 52.2621 52.7059C53.7375 52.7059 54.618 53.6159 54.618 55.1214Z" fill="#6496DC"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M60.7086 58.7054C60.3517 58.9075 59.5901 59.1547 58.8405 59.1547C57.496 59.1547 56.4488 58.3569 56.4488 56.6493V54.0315H55.2354V52.8407H56.4488V51.4361L57.7934 51.1553V52.8407H60.4826V54.0315H57.7934V56.5819C57.7934 57.4807 58.2338 57.9751 59.0785 57.9751C59.4948 57.9751 59.959 57.8404 60.4706 57.6717L60.7086 58.7054Z" fill="#6496DC"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M61.1733 57.0314H62.5416C62.7438 57.7167 63.2792 58.0313 64.4095 58.0313C65.2782 58.0313 65.8136 57.7841 65.8136 57.3233C65.8136 56.8068 65.1949 56.728 64.1003 56.4809C62.2678 56.0541 61.4946 55.7056 61.4946 54.672C61.4946 53.4248 62.6129 52.7059 64.255 52.7059C65.9325 52.7059 66.8726 53.4587 67.1106 54.582H65.7541C65.5638 54.0765 65.064 53.8293 64.2311 53.8293C63.3626 53.8293 62.851 54.1101 62.851 54.5371C62.851 54.9304 63.2554 55.0315 64.3977 55.2899C66.1707 55.6831 67.1939 55.9752 67.1939 57.1774C67.1939 58.5032 65.9325 59.1548 64.3858 59.1548C62.6605 59.1548 61.4231 58.3683 61.1733 57.0314Z" fill="#6496DC"/>
+            <mask id="mask2_3_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="78" height="32">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.8147e-05 0.725609H78V31.4926H3.8147e-05V0.725609Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask2_3_17)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.72508 31.4926C4.95723 25.5222 10.5054 21.0829 17.1453 21.0829C19.9402 21.0829 22.6301 21.8936 24.8792 23.3494L27.5094 20.866C25.4475 19.4167 23.0624 18.4103 20.5275 17.9333C21.2947 10.1803 28.2014 4.19234 36.5267 4.19234C39.815 4.19234 42.9759 5.12323 45.6675 6.88433C48.0048 8.41347 49.8501 10.4703 51.0543 12.8724C47.8527 13.6677 44.8812 15.1511 42.3807 17.2056L44.985 19.6647C48.174 17.1175 52.2499 15.6701 56.5143 15.6701C65.9895 15.6701 73.7597 22.5996 74.3228 31.4926H78C77.7262 26.3001 75.3856 21.4588 71.3999 17.8511C67.3762 14.2091 62.0897 12.2034 56.5143 12.2034C55.9342 12.2034 55.3575 12.2276 54.7843 12.2715C53.3321 8.94086 50.9093 6.09633 47.7585 4.03483C44.4497 1.86993 40.5659 0.725609 36.5267 0.725609C26.2958 0.725609 17.8087 8.08835 16.8714 17.6193C8.32519 17.7436 1.26204 23.6666 3.8147e-05 31.4926H3.72508Z" fill="#6496DC"/>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.31744 41.0604C7.31744 37.5673 10.0635 34.9098 13.8313 34.9098C16.8722 34.9098 19.5731 36.6458 20.0499 39.646H16.7135C16.3275 38.3601 15.1476 37.7387 13.8313 37.7387C11.8566 37.7387 10.5858 39.1103 10.6081 41.0604C10.5858 43.0321 11.9021 44.3822 13.8085 44.3822C15.1476 44.3822 16.3275 43.7392 16.7135 42.4534H20.0499C19.5504 45.5608 16.8043 47.211 13.8085 47.211C10.0635 47.211 7.31744 44.5537 7.31744 41.0604Z" fill="white"/>
+            <mask id="mask3_3_17" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="78" height="62">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M0 61.8287H78V0.725609H0V61.8287Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask3_3_17)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5709 46.9539H24.8164V31.5073H21.5709V46.9539Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M29.8101 41.0611C29.8101 43.0112 31.217 44.2972 33.0328 44.2972C34.8482 44.2972 36.2556 43.0112 36.2556 41.0611C36.2556 39.1324 34.8482 37.825 33.0328 37.825C31.217 37.825 29.8101 39.1324 29.8101 41.0611ZM39.544 41.0604C39.544 44.618 36.6843 47.211 33.0303 47.211C29.3988 47.211 26.5392 44.5965 26.5392 41.0604C26.5392 37.5028 29.4444 34.9098 33.0303 34.9098C36.6388 34.9098 39.544 37.5028 39.544 41.0604Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M52.6848 35.1671V46.954H49.4393V45.3252C48.5313 46.5253 47.3059 47.211 45.5811 47.211C42.8347 47.211 41.1328 45.4322 41.1328 42.5607V35.1671H44.3783V41.8965C44.3783 43.4393 44.991 44.2965 46.6704 44.2965C48.4635 44.2965 49.4393 43.2893 49.4393 41.3606V35.1671H52.6848Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M64.1914 41.0604C64.1914 39.1317 62.8068 37.8243 60.9914 37.8243C59.1756 37.8243 57.8365 39.1317 57.8365 41.0604C57.8365 43.0105 59.1985 44.2965 60.9914 44.2965C62.8068 44.2965 64.1914 43.0105 64.1914 41.0604ZM67.4373 31.5073V46.954H64.1918V45.3681C63.3295 46.4824 62.0132 47.211 60.2653 47.211C57.0198 47.211 54.5687 44.6821 54.5687 41.0604C54.5687 37.4172 57.0426 34.9099 60.2426 34.9099C62.0132 34.9099 63.3295 35.6813 64.1918 36.8173V31.5073H67.4373Z" fill="#F7F7FF"/>
+            </g>
+          </svg>
+        </a>
+        <div class="header__notfixed">
+          <div class="header__tagline">Больше, чем<br>сервис платежей</div>
+          <nav class="header__menu">
+            <ul class="header__menu_nav">
+
+              <li class="active">
+                <a class="" target="_blank" href="https://cloudpayments.ru/wiki/podkluchenie/poryadok_podkluchenia/solutions_ru">О сервисе</a>
+              </li>
+              <li class="active">
+                <a class="" target="_blank" href="https://developers.cloudpayments.ru/">Разработчикам</a>
+              </li>
+              <li class="active">
+                <a class="" target="_blank" href="https://cloudpayments.atlassian.net/wiki/spaces/KB/overview">Поддержка</a>
+              </li>
+              <!-- <li class="kassir">
+<a href="https://cloudkassir.ru" target="_blank">
+cloudkassir
+<div class="icon">
+<svg class="icon__icon-link" width="15px" height="15px">
+<use xlink:href="#icon-link"></use>
+</svg>
+
+</div>
+</a>
+</li> -->
+            </ul>
+            <div class="header__menu_sign">
+              <a href="https://merchant.cloudpayments.ru/login" target="_blank" class="btn btn--small" type="button">
+                <span class="btn-label">Войти</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="header__hamburger">
+          <a class="js_navigation_show" href="#"><span></span><span></span><span></span></a>
+        </div>
+        <div class="header__language">
+          <a class="active" href="/">RU</a>
+          <a class="" href="/en/">EN</a>
+        </div>
+      </div>
+    </header>
+  </div>

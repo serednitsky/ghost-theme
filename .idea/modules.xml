@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ghost-theme.iml" filepath="$PROJECT_DIR$/.idea/ghost-theme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ghost.iml" filepath="$PROJECT_DIR$/.idea/ghost.iml" />
     </modules>
   </component>
 </project>

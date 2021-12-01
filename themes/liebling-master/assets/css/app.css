@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import "https://cloudpayments.ru/frontend/build/static/css/main.min.css?v=31898";
 /*! sanitize.css v7.0.2 | CC0 License | github.com/csstools/sanitize.css */
 *,
 :after,
@@ -15,9 +15,7 @@
 }
 
 html {
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Oxygen, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    /* font-family: Stolzl; */
-    font-style: normal;
+
     font-weight: normal;
     line-height: 1.15;
     -moz-tab-size: 4;
@@ -531,7 +529,7 @@ textarea {
 
 .icon-facebook:before {
     content: "\E907";
-    background: #2E71FC;
+    color: #2E71FC;
 }
 
 .icon-globe:before {
@@ -560,7 +558,7 @@ textarea {
 
 .icon-vk:before {
     content: "\E90E";
-    background: #2E71FC;
+    color: #2E71FC;
 }
 
 .icon-steam:before {
@@ -653,7 +651,7 @@ textarea {
 
 .icon-instagram:before {
     content: "\E92A";
-    background: #2E71FC;
+    color: #2E71FC;
 }
 
 .icon-linkedin:before {
@@ -683,7 +681,8 @@ body {
     min-height: 100vh;
     color: var(--primary-foreground-color);
     font-size: 1rem;
-    font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+    font-family: 'Stolz', sans-serif;
+    font-style: normal;
     font-display: swap;
     overflow-x: hidden;
     background-color: var(--background-color);
@@ -1549,7 +1548,7 @@ fieldset {
 }
 
 .m-nav__left li a {
-    color: inherit
+    color: #fff
 }
 
 .m-nav__left li.more a {
@@ -1726,6 +1725,10 @@ fieldset {
     .m-secondary-menu li a {
         padding: 8px 10px
     }
+}
+
+.gh-portal-triggerbtn-wrapper {
+  display: none !important;
 }
 
 .m-secondary-menu li a:hover {
@@ -2431,14 +2434,13 @@ _:-ms-fullscreen {
     height: 400px;
     background-color: var(--background-color);
     /* border-radius: 10px; */
-    border: 1px solid var(--secondary-border-color);
     z-index: 1;
     transition: all .25s cubic-bezier(.02, .01, .47, 1)
 }
 
-.m-article-card:hover {
-    transform: translateY(-5px)
-}
+/*.m-article-card:hover {*/
+/*    transform: translateY(-5px)*/
+/*}*/
 
 .m-article-card:hover:before {
     box-shadow: var(--article-shadow-hover), 0 0 0 transparent
@@ -2508,7 +2510,7 @@ _:-ms-fullscreen {
     bottom: 0;
     left: 10px;
     /* border-radius: 10px; */
-    box-shadow: var(--article-shadow-normal), 0 0 0 transparent;
+    /*box-shadow: var(--article-shadow-normal), 0 0 0 transparent;*/
     transition: all .25s cubic-bezier(.02, .01, .47, 1)
 }
 
@@ -2663,7 +2665,8 @@ _:-ms-fullscreen {
     letter-spacing: .2px;
     line-height: 1.3;
     font-size: .875rem;
-    font-weight: 600
+    font-weight: 400;
+    padding-bottom: 20px;
 }
 
 @media only screen and (min-width:48rem) {
@@ -2692,7 +2695,7 @@ _:-ms-fullscreen {
     color: var(--titles-color);
     letter-spacing: .4px;
     line-height: 1.3;
-    font-size: 1.25rem;
+    font-size: 28px;
     font-weight: 600;
     margin: 0
 }
@@ -2897,7 +2900,9 @@ _:-ms-fullscreen {
 
 .m-footer {
     flex-shrink: 0;
+    font-weight: 400;
     background-color: var(--footer-background-color)
+
 }
 
 .m-footer__content::before {
@@ -2908,6 +2913,7 @@ _:-ms-fullscreen {
 }
 
 .m-footer__title {
+    margin-bottom: 20px;
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 0.18px;
@@ -2919,7 +2925,7 @@ _:-ms-fullscreen {
     line-height: 20px;
     letter-spacing: 0.22px;
     color: var(--footer-content-color);
-    padding: 10px 10px;
+    margin-bottom: 20px;
 }
 
 .m-footer__parent {
@@ -2957,7 +2963,7 @@ _:-ms-fullscreen {
     font-size: .875rem;
     letter-spacing: .3px;
     line-height: 1.7;
-    margin-bottom: 20px
+    margin-top: 20px
 }
 
 .m-footer-copyright span {
@@ -2995,16 +3001,15 @@ _:-ms-fullscreen {
 }
 
 .m-footer-social {
-    display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px
+    /*margin-bottom: 20px*/
 }
 
 .m-footer-social a {
     display: inline-block;
     color: #fff;
-    margin: 0 15px
+    margin: 0 10px
 }
 
 .m-footer-social a span {
@@ -3233,7 +3238,7 @@ _:-ms-fullscreen {
 
 [data-aos-delay="750"] [data-aos],
 [data-aos][data-aos][data-aos-delay="750"] {
-    transition-delay: 0
+    transition-delay: 0ms
 }
 
 [data-aos-delay="750"] [data-aos].aos-animate,
@@ -4101,4 +4106,9 @@ _:-ms-fullscreen {
 
 .glide--rtl {
     direction: rtl
+}
+
+.sidebar-title {
+  margin-top: 71px;
+  font-weight: 400;
 }
